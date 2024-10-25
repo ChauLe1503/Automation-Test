@@ -1,0 +1,12 @@
+﻿<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Automation Test" parallel="false" thread-count="3">
+    <listeners>
+        <listener class-name="com.leadsgen.utils.AllureReportListener"/>
+    </listeners>
+    <test name="Leadsgen Automation testcase">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.leadsgen.burgerprints.CreateNewOrderTest"/>
+        </classes>
+    </test>
+</suite>

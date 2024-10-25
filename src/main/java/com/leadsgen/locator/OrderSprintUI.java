@@ -1,0 +1,45 @@
+package com.leadsgen.locator;
+
+public class OrderSprintUI {
+  public static final String MENU_ORDER = "xpath=//i[@class='sl3-order text-grayish fs-24 pe-1']/following-sibling::span[@data-content-label='router-orders']";
+  public static final String MENU_CREATE_ORDER = "xpath=//button[@data-content-label='create-orders']";
+  public static final String ADD_CUSTOMER_PRODUCT_BUTTON = "xpath=//div[@class='text-center mb-3']/following-sibling::button[contains(text(),'Add custom product')]";
+  public static final String ADD_CUSTOMER_PRODUCT_TITLE = "xpath=//div/h3[contains(text(),'Add custom product')]";
+  public static final String IMG_PRODUCT = "xpath=//div[contains(@class,'avatar-background')]";
+  public static final String STYLE_BUTTON = "xpath=//ng-select[contains(@class,'ng-select-searchable')]";
+  public static final String LIST_VALUE_STYLE_BUTTON = "xpath=//div[@role='option']";
+  public static final String UPDATE_PRODUCT_BUTTON = "xpath=//button[contains(text(),'Add product to order')]";
+  public static final String BASE_BUTTON = "xpath=//ng-select[(@data-content-label='base-add-custom-product')]";
+  public static final String LIST_BASE_VALUE_BUTTON = "xpath=//div[@class='scrollable-content']//div[contains(@role,'option')]";
+  public static final String BUTTON_FACILITY = "xpath=//div[contains(@class,'ng-select-single')]";
+  public static final String LIST_VALUE_BUTTON_FACILITY = "xpath=//div/button[@role='menuitem']";
+  public static final String COLOR = "xpath=//ul[contains(@class,'list-color-wrap')]/li[contains(@class,'text-center')]";
+  public static final String SIZE = "xpath=//ul[contains(@class,'list-size-wrap')]/li[contains(@class,'mat-tooltip-trigger')]";
+  public static final String CHECKBOX  = "xpath=//mat-checkbox[@data-content-label='checkbox-add-custom-product']";
+  public static final String BUTTON_UPLOAD_DESIGN_FONT  = "xpath=//label[contains(text(),'Design front')]/parent::div";
+  public static final String BUTTON_UPLOAD_IMAGE  = "xpath=//img[contains(@class,'card-img-top img-fit')]";
+  public static final String BUTTON_UPLOAD_DESIGN_BACK  = "xpath=//label[contains(text(),'Design back')]/parent::div";
+  public static final String BUTTON_SAVE = "xpath=//button[contains(text(),'Save')]";
+  public static final String BUTTON_EDIT = "xpath=//a[contains(text(),'Edit')]";
+  public static final String FROM_PRICE_UI = "xpath=//div/span[text()='From price']/following-sibling::span";
+  public static final String SHIPPING_INFO = "xpath=//h5[contains(text(),'Shipping info')]";
+  public static final String FULL_NAME = "xpath=//input[@formcontrolname='name']";
+  public static final String EMAIL = "xpath=//input[@formcontrolname='email']";
+  public static final String PHONE_NUMBER = "xpath=//input[@formcontrolname='phone']";
+  public static final String CITY = "xpath=//input[@formcontrolname='city']";
+  public static final String COUNTRY = "xpath=//ng-select[@formcontrolname='country']";
+  public static final String LIST_COUNTRY_ELEMENT = "xpath=//div[@class='scrollable-content']//div[contains(@role,'option')]";
+  public static final String STATE = "xpath=//ng-select[@formcontrolname='state']";
+  public static final String LIST_STATE_ELEMENT = "xpath=//div[@class='ng-dropdown-panel-items scroll-host']//div[contains(@role,'option')]";
+  public static final String STRESS_ADDRESS  = "xpath=//input[contains(@formcontrolname,'line1')]";
+  public static final String ZIP_CODE  = "xpath=//input[contains(@formcontrolname,'postal_code')]";
+  public static final String RADIO_BUTTON_STANDARD  = "xpath=(//div[@class='group-radio-order ng-star-inserted']//span[@class='mat-radio-outer-circle'])[4]";
+  public static final String SKU_TEXT  = "xpath=(//div[@class='text-darkslate'])[1]";
+  public static final String UI_COST  = "xpath=//tbody[@role='rowgroup']//td[contains(@class,'cdk-column-cost mat-column-cost')]/div";
+  public static final String UI_TOTAL_COST  = "xpath=//div[@class='fw-600 text-nowrap']/span[@data-content-label='sub-total-cost']";
+  public static final String BUTTON_SHIPPING_INFO_NAME = "xpath=//h4[@data-content-label='shipping-info-name']";
+  public static final String SHIPPING_FEE  = "xpath=//div[contains(text(),'Shipping fee')]/following-sibling::div[@class='fw-600 ms-auto']";
+  public static final String BROWSE_PRODUCT  = "xpath=//button[contains(text(),'Browse product')]";
+  public static final String SKU_COST_VALUE  = "xpath=//div[contains(@class,'hstack gap-1 ng-star-inserted')]/following-sibling::span[contains(text(),'Cost')]";
+  public static final String BUTTON_INFORMATION  = "xpath=//div[@data-content-label='shipping-info-data']/div";
+}

@@ -1,0 +1,54 @@
+stages:
+  - report
+  - deploy
+  - deploy-index
+  
+variables:
+  S3_BUCKET: 'lg-data-report'
+  CLOUDFRONT_DISTRIBUTION_ID: 'E2MT8EZQ8B4F0W'
+  BASE_URL: 'https://report-testing.burgershop.io/'
+
+report:
+  image: markhobson/maven-chrome:jdk-8
+  stage: report
+  before_script:
+    - wget https://github.com/allure-framework/allure2/releases/download/2.31.0/allure-2.31.0.tgz
+    - tar xf allure-2.31.0.tgz
+    - PATH="$PWD/allure-2.31.0/bin:${PATH}"
+  script:
+    - mvn clean test
+    - allure generate --single-file -c -o target/allure-reports target/allure-results/
+  cache:
+    paths:
+      - .m2/repository
+    key: "$CI_PROJECT_PATH"
+  artifacts:
+    paths:
+      - target/allure-reports
+  tags:
+    - tester-team
+   
+deploy_to_s3:
+  image: amazon/aws-cli:2.18.11
+  stage: deploy
+  script:
+    - FOLDER=$(TZ=Asia/Ho_Chi_Minh date +%H-%M-%S-%d-%m-%Y)-$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA
+    - aws s3 cp target/allure-reports/index.html s3://$S3_BUCKET/$FOLDER/index.html
+    - echo "you can go to the website like this"
+    - echo "$BASE_URL/$FOLDER/index.html"
+  tags:
+    - builder-nonproduction
+
+deploy-index:
+  image: python:3.8
+  stage: deploy-index
+  before_script:
+    - pip install boto3 awscli      
+  script:
+    - python generate_index.py 
+    - aws s3 cp index.html s3://$S3_BUCKET/index.html
+    - echo "you can go to the website like this"
+    - echo "$BASE_URL/index.html"
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/index.html"
+  tags:
+    - builder-nonproduction

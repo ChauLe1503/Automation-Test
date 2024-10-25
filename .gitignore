@@ -1,0 +1,59 @@
+﻿
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+*.classpath
+*.project
+*.settings/
+
+# Ignore logs
+*.log
+log/
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+*.cache
+*.settings
+*.history
+
+# Ignore OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Ignore Java class files
+*.class
+
+# Ignore personal config files
+.vscode/
+*.env
+*.local
+*.bak
+
+# Ignore JAR files
+*.jar
+.env
+*.war
+
+# Ignore any local test configurations
+local_config.json
+
+# Ignore Selenium related files
+selenium-server.log
+
+# Ignore test reports
+/test-output/
+/surefire-reports/
+/allure-results/
+/allure-report/
+/logs/
+
+# Ignore Maven/Gradle wrapper files
+/.mvn/wrapper/maven-wrapper.jar
+/.gradle/
+target/
+.gradle/
+out/
+
